@@ -272,9 +272,15 @@ output "issue_alert_url" {
 #
 
 data "sentry_organization_integration" "slack" {
+<<<<<<< HEAD
   organization = "organization"
   provider_key = "slack"
   name         = "Organization" // corresponds to Slack's name of your organisation
+=======
+  organization = sentry_project.main.organization
+  provider_key = "slack"
+  name         = "Slack Workspace" # Name of your Slack workspace
+>>>>>>> main
 }
 
 resource "sentry_metric_alert" "main" {
